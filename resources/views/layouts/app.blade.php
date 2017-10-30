@@ -23,25 +23,35 @@
                      <v-flex md10 offset-lg1>  
                          <v-layout row>
                              <v-flex d-flex xs12 lg12>
-                               <div class="navbar-header">
-                                    <a class="navbar-brand" href="{{ url('/') }}">
-                                     {{ config('app.name', 'Laravel') }}
-                                    </a>
-                                </div> 
-                                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                                    <!-- Left Side Of Navbar -->
-                               
-                                      <!--
-                                          <input class="form-control " type="text" placeholder="Search" aria-label="Search">  
-                                        -->
-                                    <ul class="nav navbar-nav navbar-right">
-                                        <!-- Authentication Links -->
-                                        @if (Auth::guest())
-                                            <li><a href="{{ route('login') }}">Login</a></li>
-                                            <li><a href="{{ route('register') }}">Register</a></li>
-                                        @else
+                                <v-layout row>
+                                     <v-flex lg2>
+                                     <div class="logo" >
+                                        <a href="#" class="icon-button twitter"><i class="fa fa-twitter"></i><span></span></a>
+                                        <a href="#" class="icon-button facebook"><i class="fa fa-facebook"></i><span></span></a>
+                                        <a href="#" class="icon-button google-plus"><i class="fa fa-vk"></i><span></span></a>
+                                     </div>
+                                   
+                                    </v-flex>
+                                    <v-flex lg10>
+                                       <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                                             
+                                      <ul class="snip1189">
+                                          <li class="current"><a href="#">Home</a></li>
+                                          <li><a href="#">About Us</a></li>
+                                          <li><a href="#">Contacts</a></li>
+                                        </ul>
+                                        <div style="display: block; float: left;">
+                                          <input placeholder="Search..." type="text" name="search" class="search_field">
+                                        </div>
+                                         <ul class="nav navbar-nav navbar-right">
+
+                                            <!-- Authentication Links -->
+                                            @if (Auth::guest())
+                                                <li><a href="{{ route('login') }}">Login</a></li>
+                                                <li><a href="{{ route('register') }}">Register</a></li>
+                                            @else
                                             <!-- <shoptoolbar></shoptoolbar> -->
-                                          <div class="toolbanges" >
+                                             <div class="toolbanges" >
                                               <a href="">
                                                 <v-badge >
                                                   <span slot="badge">6</span>
@@ -78,10 +88,12 @@
                                               
                                               </div>
                                      
-                                        @endif
-                                    </ul>
-                                    
-                                </div>
+                                                @endif
+                                            </ul>
+                                            
+                                        </div>
+                                    </v-flex>
+                             
                               </v-flex>
                          </v-layout>
                         </v-flex>

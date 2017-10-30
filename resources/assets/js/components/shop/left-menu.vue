@@ -1,18 +1,17 @@
 <template>
 <div class="widget">
   <div>
-  <h2 class="menu-title mb-0">Категории</h2>
+    <h2 class="menu-title mb-0">Категории</h2>
   </div>
-  <ul class="menu-list">
-    <li><div><a @click="open" href="#">Дизайн</a></div>
-      <ul class="child-list">
-        <li><div><a href="">Нет</a></div></li>
-      </ul>
+  <ul v-if="menu.length>0" class="menu-list">
+    <li :key="index" v-for="(i, index) in menu" :class="[i.child? i.active? 'list-open' : 'list-close':'']">
+      <a href="#" @click="toogleClass(index)" >{{i.name}}</a>
+      <transition name="fade">
+        <ul v-show="i.active" class="child-list">
+          <li v-for="c in i.child"><div><a href="#">{{c.name}}</a></div></li>
+        </ul>
+      </transition>
     </li>
-    <li><a href="">Фотошоп</a></li>
-    <li><a href="">Типографика</a></li>
-    <li><a href="">Музыка</a></li>
-    <li><a href="">Видео</a></li>
   </ul>
 </div>
 </template>
@@ -21,13 +20,38 @@
   export default {
    data () {
       return {
-        show: false,
+        show: true,
+        menu:[
+          {id:1, name:'Дизайн', 
+            child:[
+              {id:6, name:'Куртки'},
+              {id:7, name: 'Обувь'},
+              {id:8, name:'Кофты'},
+              {id:9, name: 'Носки'},
+              {id:10, name:'Футболки'},
+              {id:11, name: 'Свитера'},
+              
+              ]
+          },
+          {id:2, name:'Фотошоп'},
+          {id:3, name: 'Типографика'},
+          {id:4, name: 'Мущыка',child:[
+              {id:6, name:'Куртки'},
+              {id:7, name: 'Обувь'},
+              {id:8, name:'Кофты'},
+              {id:9, name: 'Носки'}]},
+          {id:5, name: 'Видео'}
+        ]
       }
     },
     methods:{
-      open: function(e){
-        console.log($(e.target).parent().parent().find("ul").addClass("-active"));
-
+      toogleClass: function(index){
+        if( this.menu[index].active){
+          this.$set(this.menu[index], 'active',false);
+        }
+        else{
+          this.$set(this.menu[index], 'active',true);
+        }
       }
     }
     }
@@ -35,9 +59,8 @@
 </script>
 
 <style>
-* {box-sizing: border-box; margin: 0;}
+ 
 .widget {
-   
   background: white;
   font-family: 'Roboto', sans-serif;
 }
@@ -66,23 +89,15 @@
   list-style: none;
 }
 .menu-list a:before {
-  content: "+";
-  text-decoration: inherit;
-  margin-right: 14px;
+  content: "";
+  position: relative;
+  vertical-align: middle; 
+  display: inline-block;
+  width: 10px;
+  left: -10px;
+  border-top: 2px solid #cca86d; 
+  margin-left: 10px;
 }
-
-.menu-list a:after {
-  content: "\f0d7";
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit;
-  text-decoration: inherit;
-  float:right;
-  margin-right: 10px;
-
-}
-
 
 .menu-list a {
   text-decoration: none;
@@ -97,20 +112,56 @@
 }
 .menu-list a:hover {color: #b99d61;}
 
+
+.list-open a:after {
+  content: "\f0d8";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  text-decoration: inherit;
+  float:right;
+  margin-right: 10px;
+
+}
+
+.list-close a:after {
+  content: "\f0d7";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  text-decoration: inherit;
+  float:right;
+  margin-right: 10px;
+}
+
+
+
 .child-list {
+   overflow:hidden;
   padding: 0;
   list-style: none;
-  padding-left: 35px;
-  display: none;
-  transition: .3s linear;
+  padding: 0px 0px 0px;
 }
-.child-list .-active{
- display: block;
+
+.child-list a{
+ padding: 4px 45px 4px; 
+ font-size: 13px;
+ background: rgb(245, 248, 250)
 }
 .child-list a:after{
   content: none;
 }
 .child-list a:before{
   content: none;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all 0.3s;
+}
+.fade-enter, .fade-leave-to /* .list-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(-20%);
 }
 </style>

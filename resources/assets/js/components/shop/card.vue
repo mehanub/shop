@@ -8,7 +8,7 @@
     <div class="product-list">
       <h3>Маленькое черное платье</h3>
       <div class="stars"></div>
-      <span class="price">₽ 1999</span>
+      <span class="price">Р 1999</span>
       <div class="actions">
         <div class="add-to-cart">
           <a href="" class="cart-button">В корзину</a>

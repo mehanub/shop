@@ -3,14 +3,14 @@
   <a href="">
     <v-badge >
       <span slot="badge">6</span>
-      <v-icon color="grey lighten-1">shopping_cart</v-icon>
+      <v-icon color="white">shopping_cart</v-icon>
       Card
     </v-badge>
     </a>
     <a href="">
     <v-badge  color="red">
       <span slot="badge">2</span>
-      <v-icon  color="grey">mail</v-icon>
+      <v-icon  color="white">mail</v-icon>
     </v-badge>
    </a>
     

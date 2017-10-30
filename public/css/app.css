@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);@charset "UTF-8";
 
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -8362,31 +8362,198 @@ h3 {
   padding: 0;
 }
 
+ol,
+ul {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.navbar-default {
+  background-color: #000;
+  border-color: #d3e0e9;
+}
+
+.logo {
+  height: 100%;
+  width: 100%;
+}
+
+.search_field {
+  color: #020202;
+  background: white;
+  padding: 5px 10px;
+  width: 400px;
+  margin: 10px 20px 0px;
+  border-radius: 0.5em;
+}
+
+/* Wrapper */
+
+.icon-button {
+  background-color: white;
+  border-radius: 2.5rem;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.6rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  margin: 5px 5px;
+  position: relative;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 2.5rem;
+}
+
+/* Circle */
+
+.icon-button span {
+  border-radius: 0;
+  display: block;
+  height: 0;
+  left: 50%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 0;
+}
+
+.icon-button:hover span {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 2.5rem;
+  margin: -1.25rem;
+}
+
+.twitter span {
+  background-color: #4099ff;
+}
+
+.facebook span {
+  background-color: #3B5998;
+}
+
+.google-plus span {
+  background-color: #db5a3c;
+}
+
+/* Icons */
+
+.icon-button i {
+  background: none;
+  color: white;
+  height: 2.5rem;
+  left: 0;
+  line-height: 2.5rem;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 2.5rem;
+  z-index: 10;
+}
+
+.icon-button .fa-twitter {
+  color: #4099ff;
+}
+
+.icon-button .fa-facebook {
+  color: #3B5998;
+}
+
+.icon-button .fa-vk {
+  color: #db5a3c;
+}
+
+.icon-button:hover .fa-twitter,
+.icon-button:hover .fa-facebook,
+.icon-button:hover .fa-vk {
+  color: white;
+}
+
+.snip1189 {
+  font-family: 'Raleway', Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  float: left;
+  line-height: 2;
+}
+
+.snip1189 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.snip1189 li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: 0 1em;
+  padding: 0;
+}
+
+.snip1189 a {
+  padding: 0.5em 0.8em;
+  margin: 0.2em 0;
+  display: block;
+  color: white;
+  position: relative;
+  text-decoration: none;
+}
+
+.snip1189 a:before,
+.snip1189 a:after {
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  content: '';
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  opacity: 0;
+}
+
+.snip1189 a:before {
+  left: 0;
+  top: 0;
+  border-left: 3px solid #cca86d;
+  border-top: 3px solid #cca86d;
+  -webkit-transform: translate(100%, 50%);
+  transform: translate(100%, 50%);
+}
+
+.snip1189 a:after {
+  right: 0;
+  bottom: 0;
+  border-right: 3px solid #cca86d;
+  border-bottom: 3px solid #cca86d;
+  -webkit-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+
+.snip1189 a:hover,
+.snip1189 .current a {
+  color: white;
+}
+
+.snip1189 a:hover:before,
+.snip1189 .current a:before,
+.snip1189 a:hover:after,
+.snip1189 .current a:after {
+  -webkit-transform: translate(0%, 0%);
+  transform: translate(0%, 0%);
+  opacity: 1;
+}
+
 .main-container {
   padding: 0 !important;
   padding-top: 2px !important;
-}
-
-.form-inline {
-  display: inline-block;
-}
-
-.form-inline .form-control {
-  display: block;
-  width: 100%;
-  padding: .375rem .75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #495057;
-  background-color: #fff;
-  background-image: none;
-  background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: .25rem;
-  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-  transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
 }
 
 .toolbanges {
@@ -8404,7 +8571,7 @@ h3 {
   float: inherit;
   height: inherit;
   line-height: inherit;
-  color: grey;
+  color: white;
   padding: 0px 20px;
   padding-right: 25px;
   font-weight: lighter;
